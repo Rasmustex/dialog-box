@@ -1,0 +1,33 @@
+* dialog-box
+ =dialog-box= is a simple tool that allows you to create a graphical dialog box from the command line using [[https://fyne.io][fyne]]. The name of the chosen button will be printed to stdout. The intended use is to create a pop-up dialog box in shell scripts.
+** Usage
+#+begin_src
+dialog-box [OPTION]... BUTTONS
+Create graphical dialog box with BUTTONS that have the specified names.
+
+Options:
+    -p        specify text in prompt (default "Pick an option")
+    -w        specify window title (default "Dialog Box")
+    -h        show usage
+#+end_src
+** Installation
+*** Prerequisites
+In order to compile and run this program, you will need:
+- =go=, the programming language
+- The dependencies required for =fyne=, [[https://developer.fyne.io/started][found here]].
+*** Procedure
+First, clone this repository into your desired directory and enter the repo directory:
+#+begin_src shell
+git clone https://github.com/Rasmustex/dialog-box
+cd dialog-box
+#+end_src
+Then, download the =fyne= go module:
+#+begin_src shell
+go get fyne.io/fyne/v2
+go mod tidy
+#+end_src
+Now, you can compile =dialog-box= using go:
+#+begin_src shell
+go build .
+#+end_src
+Alternatively, if you want to install it to your =$GOPATH/bin=, use =go install .=
